@@ -1,1 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía - Práctica Calificada Code4</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f8f9fa;
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .card-icon.planet { background: #e74c3c; }
+        .card-icon.car { background: #2ecc71; }
+        .card-icon.bank { background: #9b59b6; }
+
+        .card h2 {
+            color: #2c3e50;
+            font-size: 1.5em;
+        }
+
+        .card-content h3 {
+            color: #34495e;
+            margin: 15px 0 10px;
+            font-size: 1.2em;
+        }
+
+        .feature-list {
+            list-style-type: none;
+            margin: 15px 0;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ecf0f1;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .code-link {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 15px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .code-link:hover {
+            background: #2980b9;
+        }
+
+        .conclusion {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+
+        .conclusion h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .conclusion-content {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+        }
+
+        .team-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .team-section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Práctica Calificada - Construcción de Software</h1>
+            <p class="subtitle">Grupo Code4 - Paradigma de Programación Orientada a Objetos</p>
+            <p><strong>Docente:</strong> Hugo Espetia Huamanga</p>
+            <p><strong>NRC:</strong> 17205</p>
+        </div>
+
+        <!-- Ejercicio 1: Clase Planeta -->
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon planet">🌍</div>
+                    <h2>Clase Planeta</h2>
+                </div>
+                <div class="card-content">
+                    <h3>Descripción</h3>
+                    <p>Modelado de planetas del sistema solar con propiedades físicas y orbitales.</p>
+                    
+                    <h3>Características Principales</h3>
+                    <ul class="feature-list">
+                        <li>Clase TipoPlaneta auxiliar</li>
+                        <li>Cálculo de densidad (masa/volumen)</li>
+                        <li>Determinación de planeta exterior</li>
+                        <li>Validación de entradas por consola</li>
+                        <li>Manejo de unidades astronómicas</li>
+                    </ul>
+                    
+                    <h3>Atributos Clave</h3>
+                    <p>nombre, cantidad_satelites, masa, volumen, diametro, distancia_media_sol, tipo_planeta</p>
+                    
+                    <a href="https://colab.research.google.com/drive/1cMR2EX-dnaQUYxlQ4wsTGO4RaqXHFfbQ?usp=sharing" class="code-link" target="_blank">Ver Código en Colab</a>
+                </div>
+            </div>
+
+            <!-- Ejercicio 2: Clase Automóvil -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon car">🚗</div>
+                    <h2>Clase Automóvil</h2>
+                </div>
+                <div class="card-content">
+                    <h3>Descripción</h3>
+                    <p>Representación completa de vehículos con todas sus características y comportamientos.</p>
+                    
+                    <h3>Características Principales</h3>
+                    <ul class="feature-list">
+                        <li>Enumerado Color con 8 opciones</li>
+                        <li>Clases auxiliares TipoCombustible y TipoAutomovil</li>
+                        <li>Cálculo de tiempo estimado de llegada</li>
+                        <li>Métodos GET/SET para todos los atributos</li>
+                        <li>Validaciones exhaustivas de entrada</li>
+                    </ul>
+                    
+                    <h3>Atributos Clave</h3>
+                    <p>marca, modelo, motor, tipo_combustible, tipo_automovil, numero_puertas, cantidad_asientos, velocidad_maxima, color, velocidad_actual</p>
+                    
+                    <a href="https://colab.research.google.com/drive/1cMR2EX-dnaQUYxlQ4wsTGO4RaqXHFfbQ?usp=sharing" class="code-link" target="_blank">Ver Código en Colab</a>
+                </div>
+            </div>
+
+            <!-- Ejercicio 3: Clase Cuenta Bancaria -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon bank">🏦</div>
+                    <h2>Clase Cuenta Bancaria</h2>
+                </div>
+                <div class="card-content">
+                    <h3>Descripción</h3>
+                    <p>Sistema bancario con herencia para cuentas de ahorro y corriente.</p>
+                    
+                    <h3>Características Principales</h3>
+                    <ul class="feature-list">
+                        <li>Herencia: CuentaBancaria → CuentaAhorros/CuentaCorriente</li>
+                        <li>Manejo de sobregiros en cuenta corriente</li>
+                        <li>Estado activo/inactivo automático</li>
+                        <li>Cálculo de intereses mensuales</li>
+                        <li>Comisiones por exceso de transacciones</li>
+                    </ul>
+                    
+                    <h3>Funcionalidades Específicas</h3>
+                    <p><strong>CuentaAhorros:</strong> Activación automática, comisión por retiros excesivos</p>
+                    <p><strong>CuentaCorriente:</strong> Sobregiro, comisión mensual fija</p>
+                    
+                    <a href="https://colab.research.google.com/drive/1cMR2EX-dnaQUYxlQ4wsTGO4RaqXHFfbQ?usp=sharing" class="code-link" target="_blank">Ver Código en Colab</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Información del Equipo -->
+        <div class="team-section">
+            <h2>Integrantes del Grupo Code4</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <h3>Casilla Mamani Ronaldo</h3>
+                    <p>Participación: 100%</p>
+                </div>
+                <div class="team-member">
+                    <h3>Llanos Chacmana Sergio David</h3>
+                    <p>Participación: 100%</p>
+                </div>
+                <div class="team-member">
+                    <h3>Merma Maxi Edison Alexis</h3>
+                    <p>Participación: 100%</p>
+                </div>
+                <div class="team-member">
+                    <h3>Quinta Quispe Katia Angela</h3>
+                    <p>Participación: 100%</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conclusiones -->
+        <div class="conclusion">
+            <h2>Conclusiones</h2>
+            <div class="conclusion-content">
+                <p>La práctica evidenció la efectividad de la programación orientada a objetos para construir sistemas modulares y escalables. Se implementaron exitosamente los tres ejercicios cumpliendo con todos los requisitos funcionales, incorporando:</p>
+                <ul class="feature-list">
+                    <li>Mecanismos de validación robustos</li>
+                    <li>Manejo de errores adecuado</li>
+                    <li>Lógica de negocio bien estructurada</li>
+                    <li>Aplicaciones confiables y mantenibles</li>
+                    <li>Principios de POO: encapsulamiento, herencia, abstracción</li>
+                </ul>
+                <p>La experiencia adquirida sienta las bases para el desarrollo de software de mayor complejidad, destacando la importancia del diseño cuidadoso y la codificación estructurada.</p>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="https://github.com/ronaldo12345A/Casos-de-POO/tree/main" class="code-link" target="_blank">Repositorio en GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
